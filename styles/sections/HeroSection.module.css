@@ -21,11 +21,34 @@
   height: 100%;
   width: 55%;
   z-index: 1;
+  overflow: hidden;
+  --x: 50%;
+  --y: 50%;
+  --size: 0px;
 }
 
 .photoImg {
   object-fit: cover;
   object-position: center top;
+}
+
+.photoOverlay {
+  pointer-events: none;
+  opacity: 1;
+  -webkit-mask-image: radial-gradient(
+    circle var(--size) at var(--x) var(--y),
+    black 0%,
+    black 68%,
+    transparent 92%
+  );
+  mask-image: radial-gradient(
+    circle var(--size) at var(--x) var(--y),
+    black 0%,
+    black 68%,
+    transparent 92%
+  );
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
 }
 
 /* ─── Social Sidebar ─────────────────────────────────────── */

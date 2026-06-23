@@ -87,6 +87,53 @@ export default function HeroSection() {
     return () => { observer.disconnect(); tl.kill() }
   }, [])
 
+  useEffect(() => {
+    const el = photoRef.current
+    if (!el) return
+
+    let targetX = 50
+    let targetY = 50
+    let currentX = 50
+    let currentY = 50
+    let targetSize = 0
+    let currentSize = 0
+    let rafId
+
+    function animate() {
+      currentX += (targetX - currentX) * 0.18
+      currentY += (targetY - currentY) * 0.18
+      currentSize += (targetSize - currentSize) * 0.18
+
+      el.style.setProperty('--x', `${currentX}%`)
+      el.style.setProperty('--y', `${currentY}%`)
+      el.style.setProperty('--size', `${currentSize}px`)
+
+      rafId = requestAnimationFrame(animate)
+    }
+
+    function handlePointerMove(e) {
+      const rect = el.getBoundingClientRect()
+
+      targetX = ((e.clientX - rect.left) / rect.width) * 100
+      targetY = ((e.clientY - rect.top) / rect.height) * 100
+      targetSize = 320
+    }
+
+    function handlePointerLeave() {
+      targetSize = 0
+    }
+
+    el.addEventListener('pointermove', handlePointerMove)
+    el.addEventListener('pointerleave', handlePointerLeave)
+    animate()
+
+    return () => {
+      el.removeEventListener('pointermove', handlePointerMove)
+      el.removeEventListener('pointerleave', handlePointerLeave)
+      cancelAnimationFrame(rafId)
+    }
+  }, [])
+
   const sidebarSocials = SIDEBAR_LABELS
     .map(label => profile.socials.find(s => s.label === label))
     .filter(Boolean)
@@ -103,6 +150,13 @@ export default function HeroSection() {
           fill priority quality={100}
           sizes="(min-width: 768px) 55vw, 100vw"
           className={styles.photoImg}
+        />
+        <Image
+          src="/assets/hero-ai.png" alt=""
+          fill quality={100}
+          sizes="(min-width: 768px) 55vw, 100vw"
+          className={`${styles.photoImg} ${styles.photoOverlay}`}
+          aria-hidden="true"
         />
       </div>
 
