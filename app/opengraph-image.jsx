@@ -3,7 +3,7 @@ import { ImageResponse } from 'next/og'
 
 export const runtime = 'edge'
 
-export const alt = 'Sujal Dhrane | Full Stack Developer'
+export const alt = 'Sujal Santosh Dharne | Aerospace and Mechanical Engineering Student'
 
 export const size = {
   width: 1200,
@@ -80,7 +80,7 @@ export default function Image() {
                 textTransform: 'uppercase',
               }}
             >
-              SOFTWARE DEVELOPER
+              AEROSPACE ENGINEERING
             </span>
           </div>
 
@@ -111,7 +111,7 @@ export default function Image() {
                 letterSpacing: -4,
               }}
             >
-              DHRANE
+              DHARNE
             </span>
           </div>
 
@@ -125,8 +125,8 @@ export default function Image() {
               marginBottom: 34,
             }}
           >
-            Building cinematic digital experiences with modern web
-            technologies & AI.
+            Aerospace and Mechanical Engineering student building space,
+            robotics, and digital manufacturing projects.
           </div>
 
           {/* TAGS */}
@@ -139,10 +139,10 @@ export default function Image() {
             }}
           >
             {[
-              'AI Architect',
-              'Full Stack',
-              'Next.js',
-              'MERN Stack',
+              'Aerospace',
+              '3D Printing',
+              'Robotics',
+              'Astronomy',
             ].map((tag) => (
               <div
                 key={tag}
@@ -169,9 +169,9 @@ export default function Image() {
             }}
           >
             {[
-              ['4+', 'Years'],
-              ['20+', 'Projects'],
-              ['AI + FS', 'Specialist'],
+              ['500+', 'Mentored'],
+              ['50+', 'Observations'],
+              ['UB 2029', 'BS Candidate'],
             ].map(([value, label]) => (
               <div
                 key={label}
@@ -222,7 +222,7 @@ export default function Image() {
             src={photoUrl}
             width={420}
             height={630}
-            alt="Sujal Dhrane"
+            alt="Sujal Santosh Dharne"
             style={{
               objectFit: 'cover',
             }}
@@ -250,7 +250,7 @@ export default function Image() {
             letterSpacing: 2,
           }}
         >
-          vaibhav-create.vercel.app
+          sujal712.github.io/sujal_portfolio
         </div>
       </div>
     ),

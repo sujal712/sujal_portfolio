@@ -3,20 +3,20 @@
     "tagline": "Portfolio 2026"
   },
   "hero": {
-    "taglineHighlight": "experiences",
-    "freelanceNote": "Available for freelance & full-time opportunities.",
-    "availableLabel": "Available for work",
-    "pills": ["AI Architect", "Full Stack Engineer", "Cinematic Creator", "MERN Stack"],
-    "specialistStat": { "value": "AI + Full Stack", "label": "Specialist" }
+    "taglineHighlight": "aerospace",
+    "freelanceNote": "Open to internships, research roles, and hands-on engineering collaborations.",
+    "availableLabel": "Open to opportunities",
+    "pills": ["Aerospace", "Digital Manufacturing", "Robotics", "Astronomy"],
+    "specialistStat": { "value": "UB 2029", "label": "BS Candidate" }
   },
   "interstitial": {
     "availabilityLabel": "Availability",
     "basedInLabel": "Based in",
-    "statLabels": ["Years\nexperience", "Projects\ndelivered", "Companies\nworked at"]
+    "statLabels": ["Students\nmentored", "Observations\nscheduled", "Waste\nreduced"]
   },
   "footer": {
-    "eyebrow": "Available for collaborations",
-    "ctaLines": ["Crafting modern", "digital products", "that feel"],
-    "ctaAccent": "alive."
+    "eyebrow": "Open for research and internships",
+    "ctaLines": ["Designing practical", "space and engineering", "systems that feel"],
+    "ctaAccent": "possible."
   }
 }

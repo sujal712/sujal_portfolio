@@ -363,11 +363,11 @@ export default function PublicationsFooterSection() {
 
         {/* ── Publication content (right of image) ── */}
         <div ref={pubContentRef} className={styles.pubContent}>
-          <span className={styles.watermark} aria-hidden>WRITING</span>
+            <span className={styles.watermark} aria-hidden>OUTREACH</span>
 
           <div className={styles.pubHero}>
-            <p  ref={labelRef}   className={styles.label}>Research &amp; Writing</p>
-            <h2 ref={headingRef} className={styles.heading}>Publications</h2>
+            <p  ref={labelRef}   className={styles.label}>Conferences &amp; Memberships</p>
+            <h2 ref={headingRef} className={styles.heading}>Outreach</h2>
           </div>
 
           <div ref={dividerRef} className={styles.divider} />
@@ -393,7 +393,7 @@ export default function PublicationsFooterSection() {
                 <div className={styles.itemRight}>
                   <span className={styles.year}>{pub.year}</span>
                   <span className={styles.readBtn}>
-                    Read <FiArrowUpRight size={11} />
+                    View <FiArrowUpRight size={11} />
                   </span>
                 </div>
               </a>
@@ -552,7 +552,7 @@ export default function PublicationsFooterSection() {
           <div ref={bottomBarRef} className={styles.bottomBar}>
             <div className={styles.bottomLeft}>
               <div className={styles.monogram}>
-                <span className={styles.monoLetters}>VK</span>
+                <span className={styles.monoLetters}>SD</span>
                 <span className={styles.monoDot} />
               </div>
               <span className={styles.leftDivider} />

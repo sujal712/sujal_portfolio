@@ -111,8 +111,8 @@ export default function WorkExperienceSection() {
       </div>
 
       <div className={styles.header}>
-        <span className={styles.label}>Work Experience</span>
-        <span className={styles.labelRight}>0{EXPS.length} Companies</span>
+        <span className={styles.label}>Experience</span>
+        <span className={styles.labelRight}>0{EXPS.length} Roles</span>
       </div>
 
       <div className={styles.timeline}>

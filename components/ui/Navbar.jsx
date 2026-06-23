@@ -12,19 +12,21 @@ import profile from '@/data/profile.json'
 import styles from '@/styles/ui/Navbar.module.css'
 import { FaBars, FaTimes } from 'react-icons/fa'
 
-// idx matches snap position in page.js (0=video,1=hero,2=about,3-4=projects,5=work-exp,6=publications,7=footer)
+const PROJECT_SLIDES = profile.projects.length
+
+// idx matches snap position in page.js.
 const NAV_ITEMS = [
-  { label: 'Home',         idx: 0 },
-  { label: 'About',        idx: 2 },
-  { label: 'Projects',     idx: 3 },
-  { label: 'Experience',   idx: 5 },
-  { label: 'Publications', idx: 6 },
-  { label: 'Contact',      idx: 7 },
+  { label: 'Home',       idx: 0 },
+  { label: 'About',      idx: 2 },
+  { label: 'Projects',   idx: 3 },
+  { label: 'Experience', idx: 3 + PROJECT_SLIDES },
+  { label: 'Outreach',   idx: 4 + PROJECT_SLIDES },
+  { label: 'Contact',    idx: 6 + PROJECT_SLIDES },
 ]
 
-function getIST() {
-  return new Date().toLocaleTimeString('en-IN', {
-    timeZone: 'Asia/Kolkata',
+function getEasternTime() {
+  return new Date().toLocaleTimeString('en-US', {
+    timeZone: 'America/New_York',
     hour: '2-digit',
     minute: '2-digit',
     second: '2-digit',
@@ -44,8 +46,8 @@ export default function Navbar() {
 
   // Live clock - set immediately on mount, then every second
   useEffect(() => {
-    setTime(getIST())
-    const id = setInterval(() => setTime(getIST()), 1000)
+    setTime(getEasternTime())
+    const id = setInterval(() => setTime(getEasternTime()), 1000)
     return () => clearInterval(id)
   }, [])
 
@@ -92,7 +94,7 @@ export default function Navbar() {
   return (
     <>
       <header ref={headerRef} className={`${styles.header} ${onIntro ? styles.introMode : ''} ${onDark ? styles.darkMode : ''}`}>
-        <span className={styles.time}>INDIA TIME - {time}</span>
+        <span className={styles.time}>EASTERN TIME - {time}</span>
 
         <NavigationMenu className={styles.navMenu}>
           <NavigationMenuList className="flex gap-6">
